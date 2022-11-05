@@ -1,6 +1,6 @@
-bin/
-obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
-.vs/
+Dotnet_Service/bin/
+Dotnet_Service/obj/
+Dotnet_Service/packages/
+Dotnet_Service/riderModule.iml
+Dotnet_Service/_ReSharper.Caches/
+Dotnet_Service/.vs/
