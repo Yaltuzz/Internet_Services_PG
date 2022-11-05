@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  app:
+    build: ./Dotnet_Service/Internet_Services_PG
+    ports:
+      - "17644:80"
+  generator:
+    build: ./Generator_Service
+  rabbit:
+    build: ./Rabbit_Service
