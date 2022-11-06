@@ -1,20 +1,13 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /src
-COPY ["Internet_Services_PG/Internet_Services_PG.csproj", "Internet_Services_PG/"]
-RUN dotnet restore "Internet_Services_PG/Internet_Services_PG.csproj"
-COPY . .
-WORKDIR "/src/Internet_Services_PG"
-RUN dotnet build "Internet_Services_PG.csproj" -c Release -o /app/build
+COPY *.csproj ./
+RUN dotnet restore
 
-FROM build AS publish
-RUN dotnet publish "Internet_Services_PG.csproj" -c Release -o /app/publish
+COPY ./* ./
+RUN dotnet publish -c Release -o out
 
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "Internet_Services_PG.dll"]
