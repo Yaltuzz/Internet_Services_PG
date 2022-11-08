@@ -16,7 +16,7 @@ namespace Internet_Services_PG
     {
         public static void Main(string[] args)
         {
-            var factory = new ConnectionFactory() { HostName = "rabbit" };
+            var factory = new ConnectionFactory() { HostName = "si_17644_rabbit" };
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
             channel.QueueDeclare(queue: "hello",
