@@ -1,16 +1,16 @@
 version: "3"
 services:
-  si_17644_rabbit:
+  si_176446_rabbit:
     image: rabbitmq:3-alpine
-  si_17644_app:
-    image: 10.40.71.55:5000/si_17644_dotnetapp
+  si_176446_app:
+    image: 10.40.71.55:5000/si_176446_dotnetapp
     ports:
       - "17644:80"
     restart: on-failure
     depends_on:
-      - si_17644_rabbit
-  si_17644_generator:
-    image: 10.40.71.55:5000/si_17644_generator
+      - si_176446_rabbit
+  si_176446_generator:
+    image: 10.40.71.55:5000/si_176446_generator
     restart: on-failure
     depends_on:
-      - si_17644_rabbit
+      - si_176446_rabbit

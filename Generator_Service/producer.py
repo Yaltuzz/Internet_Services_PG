@@ -1,7 +1,7 @@
 import pika
 import time
 
-connection = pika.BlockingConnection(pika.ConnectionParameters('si_17644_rabbit'))
+connection = pika.BlockingConnection(pika.ConnectionParameters('si_176446_rabbit'))
 channel = connection.channel()
 channel.queue_declare(queue='hello')
 for i in range(100):
