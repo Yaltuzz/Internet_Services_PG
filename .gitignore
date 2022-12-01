@@ -5,3 +5,5 @@ Dotnet_Service/Internet_Services_PG/riderModule.iml
 Dotnet_Service/Internet_Services_PG/_ReSharper.Caches/
 Dotnet_Service/.vs/
 Dotnet_Service/.idea/*
+Generator_Service/.idea/*
+.idea/*
