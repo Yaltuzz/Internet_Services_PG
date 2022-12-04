@@ -20,7 +20,6 @@ namespace Internet_Services_PG.Controllers
         [HttpGet]
         public ActionResult<List<Pressure>> Get()
         {
-            Console.WriteLine("elo elo");
             return _pressureService.Get();
         }
 
