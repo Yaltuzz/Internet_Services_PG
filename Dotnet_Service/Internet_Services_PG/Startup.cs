@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Internet_Services_PG.Models;
+using Internet_Services_PG.Services;
+using Microsoft.Extensions.Options;
 
 namespace Internet_Services_PG
 {
@@ -26,6 +29,13 @@ namespace Internet_Services_PG
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // requires using Microsoft.Extensions.Options
+            services.Configure<DatabaseSetting>(
+                Configuration.GetSection(nameof(DatabaseSetting)));
+
+            services.AddSingleton<IDatabaseSetting>(sp =>
+                sp.GetRequiredService<IOptions<DatabaseSetting>>().Value);
+            services.AddSingleton<PressureService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
