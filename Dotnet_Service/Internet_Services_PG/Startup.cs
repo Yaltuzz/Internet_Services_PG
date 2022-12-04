@@ -36,6 +36,9 @@ namespace Internet_Services_PG
             services.AddSingleton<IDatabaseSetting>(sp =>
                 sp.GetRequiredService<IOptions<DatabaseSetting>>().Value);
             services.AddSingleton<PressureService>();
+            services.AddSingleton<HumidityService>();
+            services.AddSingleton<RadiationService>();
+            services.AddSingleton<TemperatureService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
