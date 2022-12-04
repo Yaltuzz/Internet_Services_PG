@@ -11,6 +11,9 @@ namespace Internet_Services_PG.Models
         public string TemperatureCollectionName { get; set; } = null!;
 
         public string RadiationCollectionName { get; set; } = null!;
+        
+        public string HumidityCollectionName { get; set; } = null!;
+
 
     }
     
@@ -21,5 +24,6 @@ namespace Internet_Services_PG.Models
         string DatabaseName { get; set; }
         string TemperatureCollectionName { get; set; }
         string RadiationCollectionName { get; set; }
+        string HumidityCollectionName { get; set; }
     }
 }
