@@ -16,6 +16,7 @@ namespace Internet_Services_PG
     {
         public static void Main(string[] args)
         {
+/*
             var factory = new ConnectionFactory() { HostName = "si_176446_rabbit" };
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
@@ -34,7 +35,7 @@ namespace Internet_Services_PG
             };
             channel.BasicConsume(queue: "hello",
                 autoAck: true,
-                consumer: consumer);
+                consumer: consumer);*/
             CreateHostBuilder(args).Build().Run();
         }
 
