@@ -1,9 +1,9 @@
-
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+
 namespace Internet_Services_PG.Models
 {
-    public class Pressure
+    public class Temperature
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -11,6 +11,6 @@ namespace Internet_Services_PG.Models
 
         [BsonElement("Name")] 
         public string InstanceName { get; set; } = null!;
-        public decimal PressureValue { get; set; }
+        public decimal TemperatureValue { get; set; }
     }
 }
