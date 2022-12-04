@@ -13,7 +13,6 @@ namespace Internet_Services_PG.Services
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-
             _pressures = database.GetCollection<Pressure>(settings.PressureCollectionName);
         }
         
