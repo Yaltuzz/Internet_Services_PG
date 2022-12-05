@@ -6,10 +6,19 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Highsoft.Highcharts" Version="10.2.1.1" />
+        <PackageReference Include="Highsoft.Web.Mvc" Version="5.0.14" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
         <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.0" />
         <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
         <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+        <PackageReference Include="System.Windows.Forms.DataVisualization" Version="1.0.0-prerelease.20110.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\SensorMessages\Index.cshtml" />
     </ItemGroup>
 
 </Project>
