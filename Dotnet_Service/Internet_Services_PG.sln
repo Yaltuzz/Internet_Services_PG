@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Internet_Services_PG", "Internet_Services_PG\Internet_Services_PG.csproj", "{BE7E15FC-B706-4B04-8E5B-01C551589E05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Internet_Services_PG_UI", "Internet_Services_PG_UI\Internet_Services_PG_UI.csproj", "{FF686081-F1A0-4BD2-99DB-22EB6D5FD928}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{BE7E15FC-B706-4B04-8E5B-01C551589E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE7E15FC-B706-4B04-8E5B-01C551589E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE7E15FC-B706-4B04-8E5B-01C551589E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF686081-F1A0-4BD2-99DB-22EB6D5FD928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF686081-F1A0-4BD2-99DB-22EB6D5FD928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF686081-F1A0-4BD2-99DB-22EB6D5FD928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF686081-F1A0-4BD2-99DB-22EB6D5FD928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
