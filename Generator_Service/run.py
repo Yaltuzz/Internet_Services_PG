@@ -1,0 +1,1 @@
+os.system('python producer1.py')
