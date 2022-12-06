@@ -11,9 +11,9 @@ namespace Internet_Services_PG.Services
 
         public PressureService(IDatabaseSetting settings)
         {
-            var client = new MongoClient(settings.ConnectionString);
-            var database = client.GetDatabase(settings.DatabaseName);
-            _pressures = database.GetCollection<Pressure>(settings.PressureCollectionName);
+            var client = new MongoClient("mongodb://root:example@mongo:27017");
+            var database = client.GetDatabase("AtomicSensors");
+            _pressures = database.GetCollection<Pressure>("PressureSensors");
         }
         
         public List<Pressure> Get() =>
