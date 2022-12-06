@@ -1,7 +1,9 @@
 version: "3"
 services:
   si_176446_rabbit:
-    image: rabbitmq:3-alpine
+    image: rabbitmq:management-alpine
+    ports:
+      - "8085:15672"
   si_176446_app:
     build: ./Dotnet_Service/Internet_Services_PG
     ports:
