@@ -8,32 +8,24 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\cisse\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/janstopinski/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "X:\\Studia\\InformatykaSemestr7\\NetWeb\\Internet_Services_PG\\Dotnet_Service\\Internet_Services_PG_UI\\Internet_Services_PG_UI.csproj",
+      "projectUniqueName": "/Users/janstopinski/projects/pgDotnet/Internet_Services_PG/Dotnet_Service/Internet_Services_PG_UI/Internet_Services_PG_UI.csproj",
       "projectName": "Internet_Services_PG_UI",
-      "projectPath": "X:\\Studia\\InformatykaSemestr7\\NetWeb\\Internet_Services_PG\\Dotnet_Service\\Internet_Services_PG_UI\\Internet_Services_PG_UI.csproj",
-      "packagesPath": "C:\\Users\\cisse\\.nuget\\packages\\",
-      "outputPath": "X:\\Studia\\InformatykaSemestr7\\NetWeb\\Internet_Services_PG\\Dotnet_Service\\Internet_Services_PG_UI\\obj\\",
+      "projectPath": "/Users/janstopinski/projects/pgDotnet/Internet_Services_PG/Dotnet_Service/Internet_Services_PG_UI/Internet_Services_PG_UI.csproj",
+      "packagesPath": "/Users/janstopinski/.nuget/packages/",
+      "outputPath": "/Users/janstopinski/projects/pgDotnet/Internet_Services_PG/Dotnet_Service/Internet_Services_PG_UI/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\cisse\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/janstopinski/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -57,8 +49,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -70,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400-preview.22330.6\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
       }
     }
   }

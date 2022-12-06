@@ -8,7 +8,6 @@ services:
     build: ./Dotnet_Service/Internet_Services_PG
     ports:
       - "17644:80"
-      - "17645:5001"
     restart: on-failure
     depends_on:
       - si_176446_rabbit
