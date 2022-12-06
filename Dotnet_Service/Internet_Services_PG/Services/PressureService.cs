@@ -16,6 +16,10 @@ namespace Internet_Services_PG.Services
             _pressures = database.GetCollection<Pressure>("PressureSensors");
         }
         
+        public void AddSensor(Pressure pressure)
+        {
+            _pressures.InsertOne(pressure);
+        }
         public List<Pressure> Get() =>
             _pressures.Find(book => true).ToList();
 
