@@ -11,5 +11,5 @@ for i in range(100):
     channel.basic_publish(exchange='',
                       routing_key='first',
                       body=str(value))
-    time.sleep(10)
+    time.sleep(1)
 connection.close()
