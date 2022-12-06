@@ -3,4 +3,5 @@ WORKDIR /usr/src/app
 RUN python -m pip install pika --upgrade
 WORKDIR .
 COPY . .
-ENTRYPOINT python producer_1.py
+RUN chmod a+x run.py
+ENTRYPOINT python run.py
