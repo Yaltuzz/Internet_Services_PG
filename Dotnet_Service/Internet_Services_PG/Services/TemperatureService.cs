@@ -10,9 +10,9 @@ namespace Internet_Services_PG.Services
 
         public TemperatureService(IDatabaseSetting settings)
         {
-            var client = new MongoClient(settings.ConnectionString);
-            var database = client.GetDatabase(settings.DatabaseName);
-            _temperatures = database.GetCollection<Temperature>(settings.TemperatureCollectionName);
+            var client = new MongoClient("mongodb://root:example@mongo:27017");
+            var database = client.GetDatabase("AtomicSensors");
+            _temperatures = database.GetCollection<Temperature>("TemperatureSensors");
         }
         
         public List<Temperature> Get() =>

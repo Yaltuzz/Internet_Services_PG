@@ -10,6 +10,6 @@ for i in range(100):
     value = initial + random.randint(0, 5) * random.choice([-1, 1])
     channel.basic_publish(exchange='',
                       routing_key='first',
-                      body=value)
-    time.sleep(10)
+                      body=str(value))
+    time.sleep(1)
 connection.close()

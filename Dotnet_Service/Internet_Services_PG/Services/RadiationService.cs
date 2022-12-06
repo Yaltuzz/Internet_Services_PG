@@ -10,9 +10,9 @@ namespace Internet_Services_PG.Services
 
         public RadiationService(IDatabaseSetting settings)
         {
-            var client = new MongoClient(settings.ConnectionString);
-            var database = client.GetDatabase(settings.DatabaseName);
-            _radiations = database.GetCollection<Radiation>(settings.RadiationCollectionName);
+            var client = new MongoClient("mongodb://root:example@mongo:27017");
+            var database = client.GetDatabase("AtomicSensors");
+            _radiations = database.GetCollection<Radiation>("RadiationSensors");
         }
         
         public List<Radiation> Get() =>
