@@ -30,7 +30,6 @@ namespace Internet_Services_PG
         {
             services.Configure<DatabaseSetting>(
                 Configuration.GetSection(nameof(DatabaseSetting)));
-            services.AddControllersWithViews();
             services.AddSingleton<IDatabaseSetting>(sp =>
                 sp.GetRequiredService<IOptions<DatabaseSetting>>().Value);
             services.AddSingleton<PressureService>();
@@ -41,8 +40,7 @@ namespace Internet_Services_PG
             services.AddHostedService<RadiationConsumerService>();
             services.AddHostedService<HumidityConsumerService>();
             services.AddHostedService<PressureConsumerService>();
-            services.AddControllers();
-            services.AddRazorPages();
+
             // services.AddSwaggerGen(c =>
             // {
             //     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Internet_Services_PG", Version = "v1" });
@@ -64,10 +62,7 @@ namespace Internet_Services_PG
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-                });
+
         }
     }
 }

@@ -23,6 +23,8 @@ namespace Internet_Services_PG_UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+            services.AddControllers();
             services.AddRazorPages();
         }
 
@@ -46,8 +48,10 @@ namespace Internet_Services_PG_UI
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.UseEndpoints(endpoints => { endpoints.MapRazorPages(); });
+            app.UseEndpoints(endpoints => { endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
