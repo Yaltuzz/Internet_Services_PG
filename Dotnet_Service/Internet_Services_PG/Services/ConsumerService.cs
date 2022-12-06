@@ -1,9 +1,11 @@
 using System;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Internet_Services_PG.Models;
 using Microsoft.Extensions.Hosting;
+using MongoDB.Bson.IO;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Exceptions;
@@ -33,7 +35,6 @@ namespace Internet_Services_PG.Services
                 {
                     Thread.Sleep(1000);
                     Console.WriteLine("Connection Fail");
-
                 }
             }
             _channel = connection.CreateModel();
@@ -50,7 +51,9 @@ namespace Internet_Services_PG.Services
             {
                 var body = ea.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
-                Console.WriteLine(" [x] Received {0}", message);
+                Console.WriteLine("Received pressure {0}", message);
+                var dirinf = JsonSerializer.Deserialize<Pressure>(message);
+                _pressureService.Create(dirinf);
             };
             _channel.BasicConsume(queue: "first",
                 autoAck: true,
