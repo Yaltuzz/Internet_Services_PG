@@ -16,7 +16,7 @@ for i in range(100):
     sleepTime = random.randint(2,15)
     time.sleep(sleepTime)
     value = initial + random.randint(0, 5)/1000 * random.choice([-1, 1])
-    if value<0
+    if value<0:
         value=value*-1
     dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     x =  { "InstanceName":InstanceName, "RadiationValue":value, "Date":dt_string}

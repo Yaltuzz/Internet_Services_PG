@@ -37,6 +37,9 @@ namespace Internet_Services_PG
             services.AddSingleton<RadiationService>();
             services.AddSingleton<TemperatureService>();
             services.AddHostedService<TemperatureConsumerService>();
+            services.AddHostedService<RadiationConsumerService>();
+            services.AddHostedService<HumidityConsumerService>();
+            services.AddHostedService<PressureConsumerService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
