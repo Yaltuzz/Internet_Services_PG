@@ -1,16 +1,18 @@
 version: "3"
 services:
   si_176446_rabbit:
-    image: rabbitmq:3-alpine
+    image: rabbitmq:management-alpine
+    ports:
+      - "8085:15672"
   si_176446_app:
-    image: yaltuzz/si_176446_dotnet
+    build: ./Dotnet_Service/Internet_Services_PG
     ports:
       - "17644:80"
     restart: on-failure
     depends_on:
       - si_176446_rabbit
   si_176446_generator:
-    image: yaltuzz/si_176446_generator
+    build: ./Generator_Service
     restart: on-failure
     depends_on:
       - si_176446_rabbit

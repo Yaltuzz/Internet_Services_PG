@@ -3,5 +3,5 @@ WORKDIR /usr/src/app
 RUN python -m pip install pika --upgrade
 WORKDIR .
 COPY . .
-RUN chmod a+x run.sh
-CMD ["./run.sh"]
+RUN chmod a+x run.py
+ENTRYPOINT python run.py

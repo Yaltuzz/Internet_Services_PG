@@ -26,10 +26,8 @@ namespace Internet_Services_PG
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // requires using Microsoft.Extensions.Options
             services.Configure<DatabaseSetting>(
                 Configuration.GetSection(nameof(DatabaseSetting)));
             services.AddControllersWithViews();
@@ -39,6 +37,10 @@ namespace Internet_Services_PG
             services.AddSingleton<HumidityService>();
             services.AddSingleton<RadiationService>();
             services.AddSingleton<TemperatureService>();
+            services.AddHostedService<TemperatureConsumerService>();
+            services.AddHostedService<RadiationConsumerService>();
+            services.AddHostedService<HumidityConsumerService>();
+            services.AddHostedService<PressureConsumerService>();
             services.AddControllers();
             services.AddRazorPages();
             // services.AddSwaggerGen(c =>
@@ -47,7 +49,6 @@ namespace Internet_Services_PG
             // });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
