@@ -28,6 +28,17 @@ namespace Internet_Services_PG
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder
+                            .AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    });
+            });
             services.Configure<DatabaseSetting>(
                 Configuration.GetSection(nameof(DatabaseSetting)));
             services.AddSingleton<IDatabaseSetting>(sp =>
@@ -59,6 +70,7 @@ namespace Internet_Services_PG
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseAuthorization();
 
