@@ -27,7 +27,7 @@ namespace Internet_Services_PG.Controllers
         {
             _humidityService.Create(humidity);
 
-            return CreatedAtRoute("GetBook", new { id = humidity.Id.ToString() }, humidity);
+            return CreatedAtRoute("getHumidity", new { id = humidity.Id.ToString() }, humidity);
         }
     }
 }

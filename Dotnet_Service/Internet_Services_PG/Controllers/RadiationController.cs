@@ -27,7 +27,7 @@ namespace Internet_Services_PG.Controllers
         {
             _radiationService.Create(radiation);
 
-            return CreatedAtRoute("GetBook", new { id = radiation.Id.ToString() }, radiation);
+            return CreatedAtRoute("GetRadiation", new { id = radiation.Id.ToString() }, radiation);
         }
     }
 }

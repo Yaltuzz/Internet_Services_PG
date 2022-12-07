@@ -19,23 +19,35 @@
   return {
     headers: [
           {
-            text: 'Instance name',
+            text: 'Sensor type',
             align: 'start',
             sortable: false,
-            value: 'instanceName',
+            value: 'sensorType',
           },
-          { text: 'Value', value: 'pressureValue' },
+          { text: 'Instance Id', value: 'instanceName' },
+          { text: 'Value', value: 'value' },
           { text: 'Date', value: 'date' },
         ],
         values: [
         ]}
     },
 
-    created() {
-    axios.get("http://localhost:17644/pressure")
-      .then(response => {
-        console.log(response.data)
-        this.values = response.data})
-}
+    async created() {
+      let a =[]
+      let b = []
+      let c=[]
+      let d=[]
+    a=await (await axios.get("http://localhost:17644/pressure")).data
+    b = await (await axios.get("http://localhost:17644/humidity")).data
+    c=await (await axios.get("http://localhost:17644/radiation")).data
+    d = await (await axios.get("http://localhost:17644/temperature")).data
+      this.values = [...a, ...b,...c,...d]
+      this.values.forEach(element => {
+          console.log(element.value)
+      });
+      this.values.sort((a,b) =>{ 
+        return  (Date.parse(a.date) - Date.parse(b.date))
+      })
+} 
   }
 </script>

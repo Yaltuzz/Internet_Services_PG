@@ -20,7 +20,7 @@ for i in range(100):
     if value<0:
         value=value*-1
     dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    x =  { "InstanceName":InstanceName, "RadiationValue":value, "Date":dt_string,"SensorType":SensorType}
+    x =  { "InstanceName":InstanceName, "Value":value, "Date":dt_string,"SensorType":SensorType}
     channel.basic_publish(exchange='',
                       routing_key='radiation',
                       body=json.dumps(x))

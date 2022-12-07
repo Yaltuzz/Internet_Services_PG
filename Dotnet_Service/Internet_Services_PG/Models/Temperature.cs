@@ -15,9 +15,10 @@ namespace Internet_Services_PG.Models
         [JsonInclude]
         public string InstanceName { get; set; } = null!;
         [JsonInclude]
-        public decimal TemperatureValue { get; set; }
+        public decimal Value { get; set; }
         [JsonInclude]
         public string Date { get; set; }
-
+        [JsonInclude]
+        public string SensorType { get; set; }
     }
 }

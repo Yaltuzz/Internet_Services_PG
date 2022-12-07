@@ -18,7 +18,7 @@ for i in range(100):
     time.sleep(sleepTime)
     value = initial + random.randint(0, 5) * random.choice([-1, 1])
     dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    x =  { "InstanceName":InstanceName, "TemperatureValue":value, "Date":dt_string,"SensorType":SensorType}
+    x =  { "InstanceName":InstanceName, "Value":value, "Date":dt_string,"SensorType":SensorType}
     channel.basic_publish(exchange='',
                       routing_key='temperature',
                       body=json.dumps(x))
