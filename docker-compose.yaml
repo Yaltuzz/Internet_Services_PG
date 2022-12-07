@@ -13,7 +13,7 @@
     depends_on:
       - si_176446_rabbit
   si_176446_front:
-    image: yaltuzz/si_176446_front
+    image: yaltuzz/si_176446_frontend
     ports:
       - "17644:8080"
     restart: on-failure

@@ -349,12 +349,3 @@
   margin-top: 16px;
 }
 </style>
-      this.values.forEach(element => {
-          console.log(element.value)
-      });
-      this.values.sort((a,b) =>{ 
-        return  (Date.parse(a.date) - Date.parse(b.date))
-      })
-} 
-  }
-</script>
