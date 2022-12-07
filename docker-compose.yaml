@@ -19,6 +19,7 @@ services:
     depends_on:
       - si_176446_rabbit
     volumes:
+      - /app/node_modules
       - ./vue-frontend:/app
   si_176446_generator:
     build: ./Generator_Service
