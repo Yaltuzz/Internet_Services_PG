@@ -10,8 +10,8 @@ namespace Internet_Services_PG.Services
 
         public HumidityService(IDatabaseSetting settings)
         {
-            var client = new MongoClient("mongodb://root:example@mongo:27017");
-            var database = client.GetDatabase("AtomicSensors");
+            var client = new MongoClient("mongodb://root:student@actina15.maas:27017");
+            var database = client.GetDatabase("si_176446");
             _humidityList = database.GetCollection<Humidity>("HumiditySensors");
         }
         

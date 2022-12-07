@@ -1,45 +1,19 @@
-version: "3"
-services:
   si_176446_rabbit:
-    image: rabbitmq:management-alpine
-    ports:
-      - "8085:15672"
+    image: rabbitmq:3-alpine
   si_176446_app:
-    build: ./Dotnet_Service/Internet_Services_PG
+    image: yaltuzz/si_176446_dotnet
     ports:
-      - "17644:80"
+      - "17645:80"
+    restart: on-failure
+    depends_on:
+      - si_176446_rabbit
+  si_176446_generator:
+    image: yaltuzz/si_176446_generator
     restart: on-failure
     depends_on:
       - si_176446_rabbit
   si_176446_front:
-    build: ./vue-frontend
+    image: yaltuzz/si_176446_front
     ports:
-      - "8080:8080"
+      - "17644:8080"
     restart: on-failure
-    depends_on:
-      - si_176446_rabbit
-    volumes:
-      - /app/node_modules
-      - ./vue-frontend:/app
-  si_176446_generator:
-    build: ./Generator_Service
-    restart: on-failure
-    depends_on:
-      - si_176446_rabbit
-  mongo:
-    image: mongo
-    ports:
-      - "27017:27017"
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-  mongo-express:
-    image: mongo-express
-    restart: always
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
