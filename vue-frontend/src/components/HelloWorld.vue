@@ -6,6 +6,11 @@
     :items-per-page="5"
     class="elevation-1"
   ></v-data-table>
+  <v-btn 
+  @click="generateCSV()">generate csv</v-btn>
+
+  <v-btn 
+  @click="generateJSON()">generate JSON</v-btn>
   </v-container>
 </template>
 
@@ -31,7 +36,26 @@
         values: [
         ]}
     },
-
+    methods: {
+      generateCSV() {
+        let csv = 'Sensor type,Instance Name,Value,Date\n';
+        this.values.forEach((row) => {
+                csv += row.sensorType
+                csv += ','
+                csv += row.instanceName
+                csv += ','
+                csv += row.value
+                csv += ','
+                csv += row.date
+                csv += "\n";
+        });
+        const anchor = document.createElement('a');
+        anchor.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+        anchor.target = '_blank';
+        anchor.download = 'atomicSensors.csv';
+        anchor.click();
+      },
+    },
     async created() {
       let a =[]
       let b = []
