@@ -28,7 +28,7 @@ namespace Internet_Services_PG.Controllers
         {
             _pressureService.Create(pressure);
 
-            return CreatedAtRoute("GetBook", new { id = pressure.Id.ToString() }, pressure);
+            return CreatedAtRoute("GetPressure", new { id = pressure.Id.ToString() }, pressure);
         }
     }
 }

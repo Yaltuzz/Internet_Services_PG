@@ -27,7 +27,7 @@ namespace Internet_Services_PG.Controllers
         {
             _temperatureService.Create(temperature);
 
-            return CreatedAtRoute("GetBook", new { id = temperature.Id.ToString() }, temperature);
+            return CreatedAtRoute("GetTemperature", new { id = temperature.Id.ToString() }, temperature);
         }
     }
 }
